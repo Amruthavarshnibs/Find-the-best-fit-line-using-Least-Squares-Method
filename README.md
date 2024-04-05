@@ -20,50 +20,37 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ```
 /*
 Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: Amrutha varshni
-RegisterNumber: 212222040007
+Developed by: Daisy R
+RegisterNumber: 212223220016 
 */
+
 import numpy as np
 import matplotlib.pyplot as plt
-
-# proceeding input data
-
-x=np.array(eval(input()))
-y=np.array(eval(input()))
-
-# mean
-
-x_mean=np.mean(x)
-y_mean=np.mean(y)
+X=np.array(eval(input()))
+Y=np.array(eval(input()))
+X_mean=np.mean(X)
+print(X_mean)
+Y_mean=np.mean(Y)
+print(Y_mean)
 num=0
-denom=0
-
-# to find sum of(xi-x')&(yi-y')&(xi-x')^2
-
-for i in range(len(x)):
-    num+=(x[i]-x_mean*(y[i]-y_mean))
-    denom+=(x[i]-x_mean)**2
-    m=num/denom
-
-# calculate intercept
-
-b=y_mean-m*x_mean
-print(m,b)
-
-# line equation
-
-y_predicted=m*x+b
-print(y_predicted)
-
-# to plot graph
-
-plt.scatter(x,y)
-plt.plot(x,y_predicted,color='red')
+denum=0
+for i in range(len(X)):
+  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+  denum+=(X[i]-X_mean)**2
+m=num/denum
+print(m)
+b=Y_mean - m*X_mean
+print(b)
+Y_pred=m*X+b
+print(Y_pred)
+plt.scatter(X,Y,color='blue')
+plt.plot(X,Y_pred,color='yellow') 
 plt.show()
 ```
 
 ## Output:
-![image](https://github.com/Priya-Loganathan/Find-the-best-fit-line-using-Least-Squares-Method/assets/121166075/099155ff-119d-45b6-b979-8816ed7ec877)
+![ML EX-1](https://github.com/DaisyRavi/Find-the-best-fit-line-using-Least-Squares-Method/assets/151394386/b4e10515-0a09-4576-a774-bee54fbb6843)
+![ML EX -1 A](https://github.com/DaisyRavi/Find-the-best-fit-line-using-Least-Squares-Method/assets/151394386/01a533bf-1492-467a-95e8-b92396484ef2)
 
 ## Result:
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares using python programming.
